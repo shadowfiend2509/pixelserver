@@ -19,7 +19,7 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-mongoose.connect('mongodb://localhost/pixel-tank',
+mongoose.connect(process.env.MONGO_URL,
   {
     useFindAndModify: false,
     useUnifiedTopology: true,
